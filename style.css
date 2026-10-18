@@ -107,6 +107,7 @@ display: none;
 .newdivs button{
     background-color: #c9c0b7;
     height: 50%;
+    border: none;
 }
 .newdivs input{
     height: 80%;

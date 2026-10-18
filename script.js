@@ -8,8 +8,11 @@ addplayerbtn.addEventListener("click" , function(){
     newdiv.appendChild(newinput)
     let newbtn = document.createElement("button")
     newbtn.classList.add("deletebtns")
+    newbtn.textContent = "X";
+    newbtn.style.color = "red";
+
     newdiv.appendChild(newbtn)
-newbtn.addEventListener("click" , function(){
+    newbtn.addEventListener("click" , function(){
     newbtn.parentElement.remove();
     console.log("asdas");
     
