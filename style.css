@@ -102,7 +102,7 @@ display: none;
     margin-bottom: 3%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 .newdivs button{
     background-color: #c9c0b7;
@@ -111,5 +111,15 @@ display: none;
 .newdivs input{
     height: 80%;
     background-color: #c9c0b7;
+    margin-left: 10%;
+    border: none;
+    font-family: "Rubik Spray Paint", sans-serif;
+
+
+}
+.newdivs input::placeholder{
+    color: rgb(37, 36, 36);
+    font-family: "Rubik Spray Paint", sans-serif;
+
 
 }
