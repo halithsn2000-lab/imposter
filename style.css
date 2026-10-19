@@ -155,11 +155,13 @@ display: none;
 .categories{
     height: 150px;
     width: 90%;
-    background-color: #7c2909;
+    background-color: #ff7641;
     border-radius: 30px;
     border: white dotted;
     display: flex;
     justify-content: space-around;
+    padding: 15px;
+
     
 }
 #settingsnav{
@@ -176,10 +178,32 @@ display: none;
     height: 40px;
 }
 .categoriedivs{
-    background-color: #c7c5c4;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "Luckiest Guy", cursive;
 
 
 }
 .categoriedivs img{
     height: 75px;
+    display: flex;
+}
+.categoriedivs1{
+
+    font-family: "Luckiest Guy", cursive;
+
+
+
+}
+
+.categoriedivs1 h1{
+    position: relative;
+    top: -20px;
+    left: 20px;
+}
+.categoriedivs1 h3{
+    position: relative;
+    top: -30px;
+    left: 7px;
 }
