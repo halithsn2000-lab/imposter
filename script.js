@@ -47,6 +47,7 @@ continuebtn.addEventListener("click" , function(){
     bottomnav.style  = "display : none;"
     
    backbtn.addEventListener("click" , function () {
+    players = [];
     topicspage.style = "display : none;"
     navbar.style = "display : flex;";
     inputshtml.style = "display : flex;"

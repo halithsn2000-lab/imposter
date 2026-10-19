@@ -158,6 +158,9 @@ display: none;
     background-color: #7c2909;
     border-radius: 30px;
     border: white dotted;
+    display: flex;
+    justify-content: space-around;
+    
 }
 #settingsnav{
     display: flex;
@@ -171,4 +174,12 @@ display: none;
 }
 #settingsnav img{
     height: 40px;
+}
+.categoriedivs{
+    background-color: #c7c5c4;
+
+
+}
+.categoriedivs img{
+    height: 75px;
 }
