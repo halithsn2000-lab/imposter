@@ -1,4 +1,6 @@
-let addplayerbtn = document.getElementById("addplayerbtn")
+let addplayerbtn = document.getElementById("addplayerbtn");
+let continuebtn = document.getElementById("continuebtn");
+let players = [];
 
 addplayerbtn.addEventListener("click" , function(){
     let newdiv = document.createElement("div");
@@ -14,11 +16,16 @@ addplayerbtn.addEventListener("click" , function(){
     newdiv.appendChild(newbtn)
     newbtn.addEventListener("click" , function(){
     newbtn.parentElement.remove();
-    console.log("asdas");
-    
+
 
 })
 
 
     document.getElementById("inputs").appendChild(newdiv)
-})
+});
+
+
+continuebtn.addEventListener("click" , function(){
+    console.log('asdas');
+    
+});
