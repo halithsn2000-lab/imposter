@@ -9,7 +9,7 @@ let width = window.innerWidth;
 let backbtn = document.getElementById("backbtn")
 let categories = document.querySelectorAll(".categories")
 let nextbtn = document.getElementById("nextbtn")
-
+let parameters = document.getElementById("gameparameters")
 
 addplayerbtn.addEventListener("click" , function(){
 
@@ -94,3 +94,10 @@ categories.forEach(function(category) {
     
     
 });
+nextbtn.addEventListener("click" , function () {
+    if(Number(getComputedStyle(nextbtn).opacity == 1)){
+        parameters.style = "display : flex;"
+        topicspage.style = "display : none;"        
+
+    }
+})
