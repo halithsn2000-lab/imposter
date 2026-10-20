@@ -7,7 +7,7 @@ let inputshtml = document.getElementById("inputs")
 let bottomnav = document.getElementById("bottomnav")
 let width = window.innerWidth;
 let backbtn = document.getElementById("backbtn")
-
+let categories = document.querySelectorAll(".categories")
 
 
 addplayerbtn.addEventListener("click" , function(){
@@ -53,6 +53,34 @@ continuebtn.addEventListener("click" , function(){
     inputshtml.style = "display : flex;"
     bottomnav.style  = "display : flex;"
    })
+    
+    
+});
+
+
+categories.forEach(function(category) {
+    category.addEventListener("click" , function(){
+        if (category.classList.contains("selected")){
+            category.classList.remove("selected")
+            document.querySelectorAll(".categories").forEach(function(cat){
+                cat.classList.remove("selected")
+
+            })
+
+
+        }else{
+
+            document.querySelectorAll(".categories").forEach(function(cat){
+                cat.classList.remove("selected")
+
+            })            
+            category.classList.add("selected")
+
+
+        }
+  
+    })
+        
     
     
 });

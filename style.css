@@ -207,3 +207,6 @@ display: none;
     top: -30px;
     left: 7px;
 }
+.categories.selected{
+    border: solid rgb(233, 0, 0) 5px;
+}
