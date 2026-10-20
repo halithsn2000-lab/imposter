@@ -10,6 +10,7 @@ let backbtn = document.getElementById("backbtn")
 let categories = document.querySelectorAll(".categories")
 let nextbtn = document.getElementById("nextbtn")
 let parameters = document.getElementById("gameparameters")
+let backbtn2 = document.getElementById("parametersbackbtn")
 
 addplayerbtn.addEventListener("click" , function(){
 
@@ -100,4 +101,10 @@ nextbtn.addEventListener("click" , function () {
         topicspage.style = "display : none;"        
 
     }
+})
+backbtn2.addEventListener("click" , function(){
+    parameters.style = "display : none;"
+     topicspage.style = "display : flex;"
+    console.log("asdasd");
+    
 })

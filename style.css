@@ -143,6 +143,7 @@ display: none;
     background-color: white;
     align-items: center;
     justify-content: space-evenly;
+    flex-direction: column;
     gap: 5px;
 }
 #categoriescontainer{
@@ -284,9 +285,9 @@ display: none;
     padding: 5%;
 }
 #startbtn{
-    position:fixed;
-    
-    height: 60px;
+    position:absolute;
+    text-align: center;
+    height: 200px;
     width: 100%;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
