@@ -8,6 +8,7 @@ let bottomnav = document.getElementById("bottomnav")
 let width = window.innerWidth;
 let backbtn = document.getElementById("backbtn")
 let categories = document.querySelectorAll(".categories")
+let nextbtn = document.getElementById("nextbtn")
 
 
 addplayerbtn.addEventListener("click" , function(){
@@ -37,10 +38,13 @@ addplayerbtn.addEventListener("click" , function(){
 continuebtn.addEventListener("click" , function(){
     let inputs = document.querySelectorAll("input");
     inputs.forEach(function(input){
-        players.push(input.value)
-        console.log(players);
+        if(input.value.trim() !== ""){
+            players.push(input.value)
+        }
         
     })
+    console.log(players);
+
     topicspage.style  = "display : flex; flex-direction : column;";
     navbar.style = "display : none;";
     inputshtml.style = "display : none;"
@@ -52,6 +56,9 @@ continuebtn.addEventListener("click" , function(){
     navbar.style = "display : flex;";
     inputshtml.style = "display : flex;"
     bottomnav.style  = "display : flex;"
+    categories.forEach(function(allcat){
+        allcat.classList.remove("selected")
+    })
    })
     
     
@@ -62,6 +69,8 @@ categories.forEach(function(category) {
     category.addEventListener("click" , function(){
         if (category.classList.contains("selected")){
             category.classList.remove("selected")
+            nextbtn.style = "opacity : 0.9;"
+
             document.querySelectorAll(".categories").forEach(function(cat){
                 cat.classList.remove("selected")
 
@@ -75,6 +84,7 @@ categories.forEach(function(category) {
 
             })            
             category.classList.add("selected")
+            nextbtn.style = "opacity : 1;"
 
 
         }

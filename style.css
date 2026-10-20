@@ -210,3 +210,22 @@ display: none;
 .categories.selected{
     border: solid rgb(233, 0, 0) 5px;
 }
+#nextbtn{
+    position:fixed;
+    
+    height: 60px;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+
+    border: gray 1mm ;
+    background-color: rgb(155, 148, 147);
+    color: rgb(68, 49, 49);
+    font-family: "Rubik Spray Paint", sans-serif;
+    top: 94%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0.9;
+    
+}
