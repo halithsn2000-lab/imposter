@@ -283,7 +283,15 @@ display: none;
     align-items: center;
     justify-content: center;
     padding: 5%;
+
 }
+.parametersdiv2 button{
+    background-color: #c9c0b7;
+    border: none;
+    border-radius: 30px;
+    margin: 10%;
+}
+
 #startbtn{
     position:absolute;
     text-align: center;
@@ -300,4 +308,10 @@ display: none;
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
+}
+#game{
+    display: none;
+    height: 100vh;
+    width: 100%;
+    
 }

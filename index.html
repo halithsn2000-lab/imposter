@@ -14,16 +14,21 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div id="game">
+        <img src="./burger.png" alt="">
+    </div>
+
+
     <div id="gameparameters">
         <div id="parameternav">
         <img id="parametersbackbtn" style="height: 40px;" src="./back-button (1).png" alt="">
         <h2>Game settings</h2>    
         </div>
         <div id="parameterinputs">
-            <div class="parameterdivs"><h3>Imposters</h3> <div class="parametersdiv2"><button>-</button> <h1>1</h1> <button>+</button></div></div>
-            <div class="parameterdivs"><h3>Duration</h3><div class="parametersdiv2"><button>-</button> <h1>1</h1> <button>+</button></div> </div>
-            <div class="parameterdivs"><h3>Hints for imposters</h3> <button>a</button></div>
-            <div class="parameterdivs"><h3>Plot twist</h3> <button>On</button></div>
+            <div class="parameterdivs"><h3>Imposters</h3> <div class="parametersdiv2"><button value="1">-</button> <h1 id="impnum1">1</h1> <button value="2" >+</button></div></div>
+            <div class="parameterdivs"><h3>Duration</h3><div class="parametersdiv2"><button value="3">-</button> <h1 id="impnum2">1</h1> <h3>min</h3> <button value="4">+</button></div> </div>
+            <div class="parameterdivs"><h3>Hints for imposters</h3>  <input  type="checkbox" class=".checkbox" name="" id="hints"></div>
+            <div class="parameterdivs"><h3>Plot twist</h3> <input type="checkbox" class=".checkbox" name="" id="plottwist"></div>
         </div>
         <button id="startbtn">Start</button>
     </div>

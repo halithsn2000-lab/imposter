@@ -11,6 +11,17 @@ let categories = document.querySelectorAll(".categories")
 let nextbtn = document.getElementById("nextbtn")
 let parameters = document.getElementById("gameparameters")
 let backbtn2 = document.getElementById("parametersbackbtn")
+let startbtn = document.getElementById("startbtn")
+let game = document.getElementById("game")
+let impnum1 = document.getElementById("impnum1")
+let impnum2 = document.getElementById("impnum2")
+let imposters = 1;
+let hints ; 
+let plottwist ; 
+
+
+
+
 
 addplayerbtn.addEventListener("click" , function(){
 
@@ -107,4 +118,65 @@ backbtn2.addEventListener("click" , function(){
      topicspage.style = "display : flex;"
     console.log("asdasd");
     
+})
+
+startbtn.addEventListener("click" , function () {
+    if  (document.getElementById("hints").checked ){
+        hints = 1;
+        console.log(hints);
+        
+    }
+    else{
+        hints = 0;
+        console.log(hints);
+        
+    }
+    if (document.getElementById("plottwist").checked){
+        plottwist = 1 ;
+        console.log(plottwist);
+        
+    
+    }
+    else{
+        plottwist = 0;
+        console.log(plottwist);
+        
+    }
+    game.style = "display : flex;"
+    parameters.style = "display : none;"
+    topicspage.style = "display : none;"
+    navbar.style = "display : none;";
+    inputshtml.style = "display : none;"
+    bottomnav.style  = "display : none;"
+    
+})
+
+document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
+    btn.addEventListener("click" , function(){
+        if (btn.value == 1 & Number(impnum1.textContent) > 1){
+            impnum1.textContent = Number(impnum1.textContent) -1;
+            imposters --;
+            console.log(imposters);
+            
+            
+        }
+        else if (btn.value == 2){
+            impnum1.textContent = Number(impnum1.textContent) +1;
+            imposters ++;
+            console.log(imposters);
+            
+
+            
+
+        }
+        else if (btn.value == 3 & Number(impnum2.textContent) > 1){
+            impnum2.textContent = Number(impnum2.textContent) -1;
+
+            
+
+        }
+        else if(btn.value == 4){
+            impnum2.textContent = Number(impnum2.textContent) +1;
+        }
+    })
 })
