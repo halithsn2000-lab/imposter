@@ -29,7 +29,18 @@ let nextplayerbtn = document.getElementById("nextplayer");
 let view = document.getElementById("view")
 let firstplayer = document.getElementById("firstPlayer")
 let count = 0;
-
+let sportstopic = ["football", "basketball", "tennis", "volleyball", "swimming", "boxing", "cricket", "rugby", "cycling", "athletics"];
+let foodtopic = ["pizza", "burger", "pasta", "sushi", "tacos", "sandwich", "salad", "pancakes", "ice cream", "chocolate"];
+let countriestopic = ["Algeria", "Japan", "Brazil", "Canada", "Egypt", "France", "Germany", "Italy", "Australia", "Spain"];
+let randomtopic = [
+    "football", "basketball", "tennis", "volleyball", "swimming",
+    "boxing", "cricket", "rugby", "cycling", "athletics",
+    "pizza", "burger", "pasta", "sushi", "tacos",
+    "sandwich", "salad", "pancakes", "ice cream", "chocolate",
+    "Algeria", "Japan", "Brazil", "Canada", "Egypt",
+    "France", "Germany", "Italy", "Australia", "Spain"
+];
+let currentword;
 addplayerbtn.addEventListener("click" , function(){
 
     let newdiv = document.createElement("div");
@@ -92,9 +103,7 @@ continuebtn.addEventListener("click" , function(){
         console.log("more players needed");
         
     }
-    for(let i = 0 ; i < players.length ; i++){
-        numslist.push("crew");
-    } 
+ 
     
     
 });
@@ -143,6 +152,29 @@ startbtn.addEventListener("click" , function () {
         console.log(plottwist);
         
     }
+    if (gamecategorie == "Sports"){
+        let ran = Math.floor(Math.random() * sportstopic.length)
+        for(let i = 0 ; i < players.length ; i++){
+        numslist.push(sportstopic[ran]);
+    }}else if (gamecategorie == "Random"){
+        let ran = Math.floor(Math.random() * randomtopic.length)
+        for(let i = 0 ; i < players.length ; i++){
+         numslist.push(randomtopic[ran]);
+         console.log("Random");
+         
+    }}else if (gamecategorie == "Food"){
+        let ran = Math.floor(Math.random() * foodtopic.length)
+        for(let i = 0 ; i < players.length ; i++){
+        numslist.push(foodtopic[ran]);
+        console.log("Food");
+        
+    }}else if (gamecategorie == "Countries"){
+        let ran = Math.floor(Math.random() * countriestopic.length)
+        for(let i = 0 ; i < players.length ; i++){
+        numslist.push(countriestopic[ran]);
+        console.log("countirs");
+        
+    }}
     for (let i = 0; i < imposters ; i++){
         do{
             randomnum = Math.floor(Math.random()*players.length)
@@ -157,16 +189,16 @@ startbtn.addEventListener("click" , function () {
     }
      if(plottwist == 1){
 
-            if(Math.random()>0.25){
-                currentplot = 0; console.log(currentplot);
-                
-            }else{currentplot = 1 ;
-                 console.log(currentplot);
+            if(Math.random()>0.85){
+                currentplot = 1; console.log(currentplot);
                  for(let i = 0 ; i < numslist.length ; i++){
                     numslist[i] = "imposter";
                     console.log(numslist);
                     
-                 }
+                 }                
+            }else{currentplot = 0 ;
+                 console.log(currentplot);
+
 
             }
         }
