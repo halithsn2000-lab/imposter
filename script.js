@@ -20,8 +20,15 @@ let plottwist ;
 let gamecategorie;
 let maximps = 0;
 let landingpage = document.getElementById("landingpage");
-
-
+let backupplayers = []; 
+let randomnum ;
+let randomnums  = [];
+let numslist = [];
+let currentplot ; 
+let nextplayerbtn = document.getElementById("nextplayer");
+let view = document.getElementById("view")
+let firstplayer = document.getElementById("firstPlayer")
+let count = 0;
 
 addplayerbtn.addEventListener("click" , function(){
 
@@ -53,6 +60,7 @@ continuebtn.addEventListener("click" , function(){
     inputs.forEach(function(input){
         if(input.value.trim() !== ""){
             players.push(input.value)
+            backupplayers.push(input.value)
         }
         
     })
@@ -84,7 +92,9 @@ continuebtn.addEventListener("click" , function(){
         console.log("more players needed");
         
     }
-
+    for(let i = 0 ; i < players.length ; i++){
+        numslist.push("crew");
+    } 
     
     
 });
@@ -133,6 +143,44 @@ startbtn.addEventListener("click" , function () {
         console.log(plottwist);
         
     }
+    for (let i = 0; i < imposters ; i++){
+        do{
+            randomnum = Math.floor(Math.random()*players.length)
+        }while(randomnums.includes(randomnum))
+            randomnums.push(randomnum)
+            console.log(randomnums);
+            numslist[randomnum] = "Imposter";
+            console.log(numslist);
+            
+       
+            
+    }
+     if(plottwist == 1){
+
+            if(Math.random()>0.25){
+                currentplot = 0; console.log(currentplot);
+                
+            }else{currentplot = 1 ;
+                 console.log(currentplot);
+                 for(let i = 0 ; i < numslist.length ; i++){
+                    numslist[i] = "imposter";
+                    console.log(numslist);
+                    
+                 }
+
+            }
+        }
+    nextplayerbtn.addEventListener("click" , function(){
+        count++;
+        firstplayer.innerHTML = players[count];
+
+    })
+    firstplayer.innerHTML = players[count];
+    view.addEventListener("click" , function(){
+        alert(numslist[count])
+
+    })
+
     game.style = "display : flex;"
     parameters.style = "display : none;"
     topicspage.style = "display : none;"

@@ -301,5 +301,9 @@ display: none;
     display: none;
     height: 100vh;
     width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center ;
+    gap: 50px;
     
 }
