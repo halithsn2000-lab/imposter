@@ -48,13 +48,19 @@ addplayerbtn.addEventListener("click" , function(){
 
 
 continuebtn.addEventListener("click" , function(){
-    let inputs = document.querySelectorAll("input");
+    let inputs = document.querySelectorAll("#inputs input");
     inputs.forEach(function(input){
+        console.log(input.type , input.value , input);
+        
         if(input.value.trim() !== ""){
             players.push(input.value)
         }
         
     })
+     if(players.length >= 3){
+      
+        
+
     console.log(players);
 
     topicspage.style  = "display : flex; flex-direction : column;";
@@ -72,6 +78,12 @@ continuebtn.addEventListener("click" , function(){
         allcat.classList.remove("selected")
     })
    })
+    }
+    else{
+        console.log("more players needed");
+        
+    }
+
     
     
 });
