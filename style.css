@@ -27,6 +27,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 30%;
     
 }
 #navbar{
@@ -154,6 +155,7 @@ display: none;
     justify-content: space-evenly;
     flex-direction: column;
     gap: 5px;
+    margin-bottom: 30%;
 }
 #categoriescontainer{
     min-height: 100svh;
@@ -230,6 +232,7 @@ display: none;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
+    margin-bottom: 30%;
 
     
 }
