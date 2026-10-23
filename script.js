@@ -48,10 +48,9 @@ addplayerbtn.addEventListener("click" , function(){
 
 
 continuebtn.addEventListener("click" , function(){
+    players = []
     let inputs = document.querySelectorAll("#inputs input");
     inputs.forEach(function(input){
-        console.log(input.type , input.value , input);
-        
         if(input.value.trim() !== ""){
             players.push(input.value)
         }
