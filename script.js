@@ -8,7 +8,6 @@ let bottomnav = document.getElementById("bottomnav")
 let width = window.innerWidth;
 let backbtn = document.getElementById("backbtn")
 let categories = document.querySelectorAll(".categories")
-let nextbtn = document.getElementById("nextbtn")
 let parameters = document.getElementById("gameparameters")
 let backbtn2 = document.getElementById("parametersbackbtn")
 let startbtn = document.getElementById("startbtn")
@@ -18,6 +17,7 @@ let impnum2 = document.getElementById("impnum2")
 let imposters = 1;
 let hints ; 
 let plottwist ; 
+let gamecategorie;
 
 
 
@@ -77,42 +77,20 @@ continuebtn.addEventListener("click" , function(){
 });
 
 
-categories.forEach(function(category) {
+categories.forEach(function(category ,) {
     category.addEventListener("click" , function(){
-        if (category.classList.contains("selected")){
-            category.classList.remove("selected")
-            nextbtn.style = "opacity : 0.9;"
+        gamecategorie = category.querySelector("h1").textContent;
 
-            document.querySelectorAll(".categories").forEach(function(cat){
-                cat.classList.remove("selected")
+        console.log(gamecategorie);
+        topicspage.style = "display : none ;"
+        parameters.style = "display: flex;"
 
-            })
-
-
-        }else{
-
-            document.querySelectorAll(".categories").forEach(function(cat){
-                cat.classList.remove("selected")
-
-            })            
-            category.classList.add("selected")
-            nextbtn.style = "opacity : 1;"
-
-
-        }
-  
-    })
         
+  
     
-    
-});
-nextbtn.addEventListener("click" , function () {
-    if(Number(getComputedStyle(nextbtn).opacity == 1)){
-        parameters.style = "display : flex;"
-        topicspage.style = "display : none;"        
-
-    }
 })
+});
+
 backbtn2.addEventListener("click" , function(){
     parameters.style = "display : none;"
      topicspage.style = "display : flex;"
