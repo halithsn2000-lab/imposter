@@ -19,7 +19,7 @@ let hints ;
 let plottwist ; 
 let gamecategorie;
 let maximps = 0;
-
+let landingpage = document.getElementById("landingpage");
 
 
 
@@ -61,7 +61,7 @@ continuebtn.addEventListener("click" , function(){
         
 
     console.log(players);
-
+    landingpage.style = "display : none;"
     topicspage.style  = "display : flex; flex-direction : column;";
     navbar.style = "display : none;";
     inputshtml.style = "display : none;"
@@ -73,6 +73,8 @@ continuebtn.addEventListener("click" , function(){
     navbar.style = "display : flex;";
     inputshtml.style = "display : flex;"
     bottomnav.style  = "display : flex;"
+    landingpage.style = "display : flex;"
+
     categories.forEach(function(allcat){
         allcat.classList.remove("selected")
     })
