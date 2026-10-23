@@ -18,7 +18,7 @@ let imposters = 1;
 let hints ; 
 let plottwist ; 
 let gamecategorie;
-
+let maximps = 0;
 
 
 
@@ -141,15 +141,19 @@ startbtn.addEventListener("click" , function () {
 })
 
 document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
+
     btn.addEventListener("click" , function(){
-        if (btn.value == 1 & Number(impnum1.textContent) > 1){
+         maximps = Math.round(players.length / 3);
+
+        if (btn.value == 1 && Number(impnum1.textContent) > 1){
             impnum1.textContent = Number(impnum1.textContent) -1;
             imposters --;
             console.log(imposters);
             
             
         }
-        else if (btn.value == 2){
+        
+        else if (btn.value == 2 && Number(impnum1.textContent) < maximps){
             impnum1.textContent = Number(impnum1.textContent) +1;
             imposters ++;
             console.log(imposters);
@@ -158,7 +162,7 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
             
 
         }
-        else if (btn.value == 3 & Number(impnum2.textContent) > 1){
+        else if (btn.value == 3 && Number(impnum2.textContent) > 1){
             impnum2.textContent = Number(impnum2.textContent) -1;
 
             
