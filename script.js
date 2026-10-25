@@ -88,7 +88,6 @@ let gameback = document.getElementById("gameback");
 let popupcontainer = document.getElementById("popupcontainer");
 let htmltimer = document.getElementById("timer")
 let time  = 0;
-let ran = 0;
 let currenthint ; 
 
 
@@ -208,26 +207,26 @@ startbtn.addEventListener("click" , function () {
         
     }
     if (gamecategorie == "Sports"){
-        ran = Math.floor(Math.random() * sportstopic.length)
+        let ran = Math.floor(Math.random() * sportstopic.length)
         for(let i = 0 ; i < players.length ; i++){
         numslist.push(sportstopic[ran])
         currenthint = sportshints[ran];
     }}else if (gamecategorie == "Random"){
-         ran = Math.floor(Math.random() * randomtopic.length)
+        let ran = Math.floor(Math.random() * randomtopic.length)
          currenthint = randomhints[ran]
         for(let i = 0 ; i < players.length ; i++){
          numslist.push(randomtopic[ran]);
          console.log("Random");
          
     }}else if (gamecategorie == "Food"){
-         ran = Math.floor(Math.random() * foodtopic.length)
+        let ran = Math.floor(Math.random() * foodtopic.length)
          currenthint = foodhints[ran]
         for(let i = 0 ; i < players.length ; i++){
         numslist.push(foodtopic[ran]);
         console.log("Food");
         
     }}else if (gamecategorie == "Countries"){
-         ran = Math.floor(Math.random() * countriestopic.length)
+        let ran = Math.floor(Math.random() * countriestopic.length)
          currenthint = countrieshints[ran]
         for(let i = 0 ; i < players.length ; i++){
         numslist.push(countriestopic[ran]);
