@@ -89,8 +89,8 @@ let popupcontainer = document.getElementById("popupcontainer");
 let htmltimer = document.getElementById("timer")
 let time  = 0;
 let currenthint ; 
-
-
+let timeleft = 0;
+let timeintroval ;
 
 addplayerbtn.addEventListener("click" , function(){
 
@@ -137,28 +137,7 @@ continuebtn.addEventListener("click" , function(){
     inputshtml.style = "display : none;"
     bottomnav.style  = "display : none;"
     
-   backbtn.addEventListener("click" , function () {
-    players = [];
-    topicspage.style = "display : none;"
-    navbar.style = "display : flex;";
-    inputshtml.style = "display : flex;"
-    bottomnav.style  = "display : flex;"
-    landingpage.style = "display : flex;"
-
-    categories.forEach(function(allcat){
-        allcat.classList.remove("selected")
-    })
-   })
-    }
-    else{
-        console.log("more players needed");
-        
-    }
- 
-    
-    
-});
-
+   
 
 categories.forEach(function(category ,) {
     category.addEventListener("click" , function(){
@@ -174,12 +153,7 @@ categories.forEach(function(category ,) {
 })
 });
 
-backbtn2.addEventListener("click" , function(){
-    parameters.style = "display : none;"
-     topicspage.style = "display : flex;"
-    console.log("asdasd");
-    
-})
+
 
 startbtn.addEventListener("click" , function () {
     time = Number(impnum2.textContent)
@@ -263,8 +237,11 @@ startbtn.addEventListener("click" , function () {
 
     firstplayer.innerHTML = players[count];
 
-    
+    firstplayer.style = "display : flex;"
+    view.style =  "display : flex;"
+    nextplayerbtn.style = "display : flex;"
 
+    htmltimer.style = "displat:none;"
     game.style = "display : flex;"
     parameters.style = "display : none;"
     topicspage.style = "display : none;"
@@ -337,13 +314,31 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
         if (count == players.length - 1 ){
             nextplayerbtn.innerHTML = "Start"
         }else if (count == players.length){
+            document.getElementById("timeleft").style = "display : flex"
+            nextplayerbtn.innerHTML = "Next player"
+
             firstplayer.style = "display : none;"
             nextplayerbtn.style = "display : none;"
             view.style = "display : none;"
             htmltimer.style = "display: flex;"
+            timeleft = time*60;
+            console.log("fuck me with these bugs");
+             
+           timeintroval = setInterval(function(){
+                timeleft --;
+                let mins = Math.floor(timeleft /60)
+                let secs = timeleft % 60
+                document.getElementById("timeleft").textContent = mins +" : "+secs;
+                console.log(timeleft);
+                if(timeleft == 0){
+                    clearInterval(timeintroval)
+                    document.getElementById("timeleft").style = "display : none"
+                }
+                
 
+
+            } ,1000)
         }
-        
         
 
     })
@@ -357,6 +352,7 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
 
 
             gameback.addEventListener("click" , function(){
+        clearInterval(timeintroval)
         game.style = "display :none";
         parameters.style = "display : flex;"
         count = 0;
@@ -364,3 +360,34 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
         randomnums = [];
         time = 0;    
     })
+
+
+    backbtn.addEventListener("click" , function () {
+    clearInterval(timeintroval)
+    players = [];
+    topicspage.style = "display : none;"
+    navbar.style = "display : flex;";
+    inputshtml.style = "display : flex;"
+    bottomnav.style  = "display : flex;"
+    landingpage.style = "display : flex;"
+
+    categories.forEach(function(allcat){
+        allcat.classList.remove("selected")
+    })
+   })
+    }
+    else{
+        console.log("more players needed");
+        
+    }
+ 
+    
+    
+});
+backbtn2.addEventListener("click" , function(){
+    clearInterval(timeintroval)
+    parameters.style = "display : none;"
+     topicspage.style = "display : flex;"
+    console.log("asdasd");
+    
+})
