@@ -30,8 +30,11 @@ let view = document.getElementById("view")
 let firstplayer = document.getElementById("firstPlayer")
 let count = 0;
 let sportstopic = ["football", "basketball", "tennis", "volleyball", "swimming", "boxing", "cricket", "rugby", "cycling", "athletics"];
+let sportshints = ["Offside","Dunk","Deuce","Rotation","Laps","Knockout","Wicket","Scrum","Pedals","Decathlon"];
 let foodtopic = ["pizza", "burger", "pasta", "sushi", "tacos", "sandwich", "salad", "pancakes", "ice cream", "chocolate"];
+let foodhints = ["Crust","Patty","Sauce","Wasabi","Salsa","Filling","Dressing","Syrup","Scoop","Cocoa"];
 let countriestopic = ["Algeria", "Japan", "Brazil", "Canada", "Egypt", "France", "Germany", "Italy", "Australia", "Spain"];
+let countrieshints = ["Sahara","Shinkansen","Carnival","Maple","Pharaoh","Baguette","Autobahn","Colosseum","Outback","Flamenco"];
 let randomtopic = [
     "football", "basketball", "tennis", "volleyball", "swimming",
     "boxing", "cricket", "rugby", "cycling", "athletics",
@@ -40,7 +43,56 @@ let randomtopic = [
     "Algeria", "Japan", "Brazil", "Canada", "Egypt",
     "France", "Germany", "Italy", "Australia", "Spain"
 ];
+let randomhints = [
+    // Sports
+    "Offside",     // football
+    "Dunk",        // basketball
+    "Deuce",       // tennis
+    "Rotation",    // volleyball
+    "Laps",        // swimming
+    "Knockout",    // boxing
+    "Wicket",      // cricket
+    "Scrum",       // rugby
+    "Pedals",      // cycling
+    "Decathlon",   // athletics
+
+    // Food
+    "Crust",       // pizza
+    "Patty",       // burger
+    "Sauce",       // pasta
+    "Wasabi",      // sushi
+    "Salsa",       // tacos
+    "Filling",     // sandwich
+    "Dressing",    // salad
+    "Syrup",       // pancakes
+    "Scoop",       // ice cream
+    "Cocoa",       // chocolate
+
+    // Countries
+    "Sahara",      // Algeria
+    "Shinkansen",  // Japan
+    "Carnival",    // Brazil
+    "Maple",       // Canada
+    "Pharaoh",     // Egypt
+    "Baguette",    // France
+    "Autobahn",    // Germany
+    "Colosseum",   // Italy
+    "Outback",     // Australia
+    "Flamenco"     // Spain
+];
 let currentword;
+let popup = document.getElementById("popup")
+let popupclose = document.getElementById("popupclose")
+let popuph1 = document.getElementById("popuph1")
+let gameback = document.getElementById("gameback");
+let popupcontainer = document.getElementById("popupcontainer");
+let htmltimer = document.getElementById("timer")
+let time  = 0;
+let ran = 0;
+let currenthint ; 
+
+
+
 addplayerbtn.addEventListener("click" , function(){
 
     let newdiv = document.createElement("div");
@@ -131,6 +183,9 @@ backbtn2.addEventListener("click" , function(){
 })
 
 startbtn.addEventListener("click" , function () {
+    time = Number(impnum2.textContent)
+    console.log(time);
+    
     if  (document.getElementById("hints").checked ){
         hints = 1;
         console.log(hints);
@@ -153,23 +208,27 @@ startbtn.addEventListener("click" , function () {
         
     }
     if (gamecategorie == "Sports"){
-        let ran = Math.floor(Math.random() * sportstopic.length)
+        ran = Math.floor(Math.random() * sportstopic.length)
         for(let i = 0 ; i < players.length ; i++){
-        numslist.push(sportstopic[ran]);
+        numslist.push(sportstopic[ran])
+        currenthint = sportshints[ran];
     }}else if (gamecategorie == "Random"){
-        let ran = Math.floor(Math.random() * randomtopic.length)
+         ran = Math.floor(Math.random() * randomtopic.length)
+         currenthint = randomhints[ran]
         for(let i = 0 ; i < players.length ; i++){
          numslist.push(randomtopic[ran]);
          console.log("Random");
          
     }}else if (gamecategorie == "Food"){
-        let ran = Math.floor(Math.random() * foodtopic.length)
+         ran = Math.floor(Math.random() * foodtopic.length)
+         currenthint = foodhints[ran]
         for(let i = 0 ; i < players.length ; i++){
         numslist.push(foodtopic[ran]);
         console.log("Food");
         
     }}else if (gamecategorie == "Countries"){
-        let ran = Math.floor(Math.random() * countriestopic.length)
+         ran = Math.floor(Math.random() * countriestopic.length)
+         currenthint = countrieshints[ran]
         for(let i = 0 ; i < players.length ; i++){
         numslist.push(countriestopic[ran]);
         console.log("countirs");
@@ -202,16 +261,10 @@ startbtn.addEventListener("click" , function () {
 
             }
         }
-    nextplayerbtn.addEventListener("click" , function(){
-        count++;
-        firstplayer.innerHTML = players[count];
 
-    })
     firstplayer.innerHTML = players[count];
-    view.addEventListener("click" , function(){
-        alert(numslist[count])
 
-    })
+    
 
     game.style = "display : flex;"
     parameters.style = "display : none;"
@@ -219,8 +272,26 @@ startbtn.addEventListener("click" , function () {
     navbar.style = "display : none;";
     inputshtml.style = "display : none;"
     bottomnav.style  = "display : none;"
+        
     
+
+
 })
+
+    view.addEventListener("click" , function(){
+        popup.style = "display : flex;"
+        popuph1.textContent = numslist[count];
+        console.log(popuph1);
+        game.style="display :none;"
+        popupcontainer.style = "display : flex;"
+        if (popup.querySelector("h1").textContent == "Imposter"){
+            popup.querySelector("h3").textContent = currenthint;
+        }else{
+            popup.querySelector("h3").textContent = "";
+        }
+        
+
+    })
 
 document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
 
@@ -247,11 +318,50 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
         else if (btn.value == 3 && Number(impnum2.textContent) > 1){
             impnum2.textContent = Number(impnum2.textContent) -1;
 
+
             
 
         }
         else if(btn.value == 4){
             impnum2.textContent = Number(impnum2.textContent) +1;
+
+            
         }
     })
 })
+
+
+    nextplayerbtn.addEventListener("click" , function(){
+       count++;     
+        firstplayer.innerHTML = players[count];
+        console.log(count);
+        if (count == players.length - 1 ){
+            nextplayerbtn.innerHTML = "Start"
+        }else if (count == players.length){
+            firstplayer.style = "display : none;"
+            nextplayerbtn.style = "display : none;"
+            view.style = "display : none;"
+            htmltimer.style = "display: flex;"
+
+        }
+        
+        
+
+    })
+    popupclose.addEventListener("click" , function(){
+            popup.style = "display : none;"
+            game.style = "display : flex"
+            popupcontainer.style = "display :none"
+        })
+
+        
+
+
+            gameback.addEventListener("click" , function(){
+        game.style = "display :none";
+        parameters.style = "display : flex;"
+        count = 0;
+        numslist = [];
+        randomnums = [];
+        time = 0;    
+    })

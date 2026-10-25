@@ -305,5 +305,53 @@ display: none;
     align-items: center;
     justify-content:center ;
     gap: 50px;
+    font-family: "Luckiest Guy", cursive;
+}
+#game button{
+    font-family: "Luckiest Guy", cursive;
+}
+#popup{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    height: 300px;
+    width: 80%;
+    font-family: "Luckiest Guy", cursive;
+
     
+}
+#popup button{
+    position: relative;
+    left:40%;
+    top: -25%;
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    border: none;
+    color: red;
+}
+#game img{
+    height: 45px;
+    position: relative;
+    left:-45%;
+    top: -28%;
+}
+#popupcontainer{
+    display: none;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#timer{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: "Luckiest Guy", cursive;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-color: #c7c5c4;
 }
