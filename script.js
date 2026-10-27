@@ -94,6 +94,10 @@ let timeintroval ;
 let votebtn = document.getElementById("votebtn")
 let voteplayer;
 let votetxt = document.getElementById("votetxt")
+let votes = []
+let submit = document.getElementById("submit")
+let imps = []
+
 
 
 
@@ -222,6 +226,8 @@ startbtn.addEventListener("click" , function () {
             randomnums.push(randomnum)
             console.log(randomnums);
             numslist[randomnum] = "Imposter";
+            imps.push(players[randomnum])
+            votes.push(players[randomnum])
             console.log(numslist);
             
        
@@ -363,7 +369,6 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
 
 
        
-
         clearInterval(timeintroval)
         game.style = "display :none";
         parameters.style = "display : flex;"
@@ -410,7 +415,10 @@ backbtn2.addEventListener("click" , function(){
         element.style = "display : none;"
     })
 })
+let countt = 0;
+let choosen = []
 votebtn.addEventListener("click" ,function(){
+    clearInterval(timeintroval)
     votetxt.style = "display : flex;"
     document.getElementById("voteoptions").style= "display : flex"
     htmltimer.style = "display : none;";
@@ -423,10 +431,98 @@ votebtn.addEventListener("click" ,function(){
         votepalyer.innerHTML = player;
         votepalyer.classList.add("voteplayers")
         document.getElementById("voteoptions").appendChild(votepalyer);
+
     })
-})
- document.querySelectorAll("#game .voteplayers").forEach(function(element){
+
+
+
+     document.querySelectorAll("#game .voteplayers").forEach(function(element){
         element.addEventListener("click" , function(){
+        
+            if(countt < imposters ){
+            choosen.push(element.innerHTML)
+            element.style = "border: red solid 2mm;"
+                    countt ++;
+                
+            }else if(countt == imposters){
+                document.querySelectorAll("#game .voteplayers").forEach(function(som){
+                    som.style = "border : none;"
+                    countt = 0;
+                    choosen = [];
+                })
+            }
+
+            
+            
 
         })
     })
+
+})
+submit.addEventListener("click" , function(){
+    let votecount = 0;
+    votetxt.style = "display: none;"
+    document.getElementById("voteoptions").style = "display: none;"
+    let h = document.createElement("h1")
+    h.classList.add("winorloose")
+    game.appendChild(h)
+
+    for(let i = 0 ; i < choosen.length ; i++){
+        if(choosen[i] == imps[i]){
+            votecount++
+        
+        }
+        if(currentplot == 1 ){
+
+            console.log("Plot twost , you all are IMPOSTERS");
+            h.innerHTML = "Plot twost , you all are IMPOSTERS !!!"
+            h.style = "color : purple;"
+
+            
+        }
+        else if(votecount == imposters){
+
+            h.innerHTML = "Crew wins !"
+            h.style = "color : green;"
+            console.log("Crew wins");
+
+            
+        }else{
+
+            console.log("Imps win");
+            h.innerHTML = "Imps win !"
+            h.style = "color : red;"
+            
+        }
+    }
+    gameback.addEventListener("click" , function(){
+                h.style = "display : none;"
+        b.style = "display : none;"
+        game.style = "display :none";
+        parameters.style = "display : flex;"
+        count = 0;
+        numslist = [];
+        randomnums = [];
+        time = 0;
+        countt = 0;
+        choosen = [];
+    })
+    let b = document.createElement("button")
+    game.appendChild(b)
+    b.innerHTML = "Play again"
+    b.addEventListener("click" , function(){
+        h.style = "display : none;"
+        b.style = "display : none;"
+        game.style = "display :none";
+        parameters.style = "display : flex;"
+        count = 0;
+        numslist = [];
+        randomnums = [];
+        time = 0;
+        countt = 0;
+        choosen = [];
+
+    })
+
+
+})

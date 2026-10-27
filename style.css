@@ -408,4 +408,15 @@ display: none;
     justify-content:left;
     position: relative;
     
+
+}
+#submit{
+    display: none;
+    background-color: #c9c0b7;
+    border: black solid;
+}
+#gameresault{
+    display: none;
+    font-family: "Luckiest Guy", cursive;
+ 
 }
