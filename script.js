@@ -24,7 +24,7 @@ let backupplayers = [];
 let randomnum ;
 let randomnums  = [];
 let numslist = [];
-let currentplot ; 
+let currentplot = 0;
 let nextplayerbtn = document.getElementById("nextplayer");
 let view = document.getElementById("view")
 let firstplayer = document.getElementById("firstPlayer")
@@ -579,7 +579,7 @@ votebtn.addEventListener("click" ,function(){
 
 })
 submit.addEventListener("click" , function(){
-     votecount = 0;
+
     votetxt.style = "display: none;"
     document.getElementById("voteoptions").style = "display: none;"
     let h = document.createElement("h1")
@@ -591,7 +591,10 @@ submit.addEventListener("click" , function(){
             votecount++
         
         }
-        if(currentplot == 1 ){
+        
+  
+    }
+    if(currentplot == 1 ){
             
             console.log("Plot twost , you all are IMPOSTERS");
             h.innerHTML = "Plot twist , you all are IMPOSTERS !!!"
@@ -617,8 +620,6 @@ submit.addEventListener("click" , function(){
 
 
         }
-  
-    }
     gameback.addEventListener("click" , function(){
         currentplot == 0;
                 h.style = "display : none;"
