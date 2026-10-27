@@ -80,6 +80,73 @@ let randomhints = [
     "Outback",     // Australia
     "Flamenco"     // Spain
 ];
+let animalstopic = [
+    "Lion", "Elephant", "Penguin", "Dolphin", "Eagle",
+    "Snake", "Giraffe", "Shark", "Kangaroo", "Owl",
+    "Turtle", "Monkey", "Cheetah", "Octopus", "Camel"
+];
+
+let animalhints = [
+    "King", "Memory", "Cold", "Intelligent", "Sky",
+    "Slither", "Tall", "Danger", "Jump", "Night",
+    "Shell", "Banana", "Speed", "Eight", "Desert"
+];
+let techtopic = [
+    "Computer", "Keyboard", "Mouse", "Smartphone", "Headphones",
+    "Camera", "Drone", "Robot", "Printer", "WiFi",
+    "Battery", "Microphone", "Projector", "Satellite", "VR headset"
+];
+
+let techhints = [
+    "Desktop", "Typing", "Click", "Pocket", "Music",
+    "Capture", "Flying", "Automatic", "Paper", "Wireless",
+    "Energy", "Voice", "Screen", "Orbit", "Immersion"
+];
+let schooltopic = [
+    "Mathematics", "History", "Geography", "Chemistry", "Physics",
+    "Biology", "Pencil", "Backpack", "Exam", "Homework",
+    "Teacher", "Library", "Calculator", "Notebook", "Graduation"
+];
+
+let schoolhints = [
+    "Numbers", "Past", "Maps", "Reactions", "Forces",
+    "Living", "Eraser", "Carry", "Stress", "Deadline",
+    "Explain", "Quiet", "Solve", "Pages", "Achievement"
+];
+let gamestopic = [
+    "Minecraft", "Fortnite", "Roblox", "Among Us", "GTA",
+    "FIFA", "Mario", "Pokemon", "Tetris", "Pac-Man",
+    "Call of Duty", "Rocket League", "Clash Royale",
+    "Subway Surfers", "Terraria"
+];
+
+let gameshints = [
+    "Blocks", "Battle", "Create", "Suspicion", "Crime",
+    "Football", "Plumber", "Capture", "Shapes", "Maze",
+    "Soldiers", "Cars", "Cards", "Chase", "Underground"
+];
+let objectstopic = [
+    "Mirror", "Umbrella", "Clock", "Scissors", "Pillow",
+    "Refrigerator", "Toothbrush", "Wallet", "Suitcase", "Candle",
+    "Key", "Elevator", "Flashlight", "Alarm clock", "Fan"
+];
+
+let objectshints = [
+    "Reflection", "Rain", "Time", "Cut", "Sleep",
+    "Cold", "Morning", "Money", "Travel", "Flame",
+    "Lock", "Floors", "Darkness", "Wake up", "Breeze"
+];
+let clothingtopic = [
+    "Sneakers", "Hoodie", "Sunglasses", "Suit", "Jeans",
+    "Scarf", "Helmet", "Watch", "Ring", "Backpack",
+    "Sandals", "Tie", "Gloves", "Raincoat", "Crown"
+];
+
+let clothinghints = [
+    "Laces", "Comfort", "Shade", "Formal", "Denim",
+    "Neck", "Protection", "Wrist", "Finger", "Shoulders",
+    "Summer", "Knot", "Fingers", "Waterproof", "Royalty"
+];
 let votecount = 0;
 let currentword;
 let popup = document.getElementById("popup")
@@ -218,6 +285,48 @@ startbtn.addEventListener("click" , function () {
          currenthint = countrieshints[ran]
         for(let i = 0 ; i < players.length ; i++){
         numslist.push(countriestopic[ran]);
+        console.log("countirs");
+        
+    }}else if (gamecategorie == "Animals"){
+        let ran = Math.floor(Math.random() * animalstopic.length)
+         currenthint = animalhints[ran]
+        for(let i = 0 ; i < players.length ; i++){
+        numslist.push(animalstopic[ran]);
+        console.log("countirs");
+        
+    }}else if (gamecategorie == "Technology"){
+        let ran = Math.floor(Math.random() * techtopic.length)
+         currenthint = techhints[ran]
+        for(let i = 0 ; i < players.length ; i++){
+        numslist.push(techtopic[ran]);
+        console.log("countirs");
+        
+    }}else if (gamecategorie == "School"){
+        let ran = Math.floor(Math.random() * schooltopic.length)
+         currenthint = schoolhints[ran]
+        for(let i = 0 ; i < players.length ; i++){
+        numslist.push(schooltopic[ran]);
+        console.log("countirs");
+        
+    }}else if (gamecategorie == "Video Games"){
+        let ran = Math.floor(Math.random() * gamestopic.length)
+         currenthint = gameshints[ran]
+        for(let i = 0 ; i < players.length ; i++){
+        numslist.push(gamestopic[ran]);
+        console.log("countirs");
+        
+    }}else if (gamecategorie == "Everyday Objects"){
+        let ran = Math.floor(Math.random() * objectstopic.length)
+         currenthint = objectshints[ran]
+        for(let i = 0 ; i < players.length ; i++){
+        numslist.push(objectstopic[ran]);
+        console.log("countirs");
+        
+    }}else if (gamecategorie == "Clothing and Fashion"){
+        let ran = Math.floor(Math.random() * clothingtopic.length)
+         currenthint = clothinghints[ran]
+        for(let i = 0 ; i < players.length ; i++){
+        numslist.push(clothingtopic[ran]);
         console.log("countirs");
         
     }}
