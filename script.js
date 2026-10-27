@@ -346,7 +346,7 @@ startbtn.addEventListener("click" , function () {
     }
      if(plottwist == 1){
 
-            if(Math.random()>0.1){
+            if(Math.random()>0.85){
                 currentplot = 1; console.log(currentplot);
                  for(let i = 0 ; i < numslist.length ; i++){
                     numslist[i] = "imposter";
