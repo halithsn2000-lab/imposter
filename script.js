@@ -80,6 +80,7 @@ let randomhints = [
     "Outback",     // Australia
     "Flamenco"     // Spain
 ];
+let votecount = 0;
 let currentword;
 let popup = document.getElementById("popup")
 let popupclose = document.getElementById("popupclose")
@@ -460,7 +461,7 @@ votebtn.addEventListener("click" ,function(){
 
 })
 submit.addEventListener("click" , function(){
-    let votecount = 0;
+     votecount = 0;
     votetxt.style = "display: none;"
     document.getElementById("voteoptions").style = "display: none;"
     let h = document.createElement("h1")
@@ -475,12 +476,13 @@ submit.addEventListener("click" , function(){
         if(currentplot == 1 ){
 
             console.log("Plot twost , you all are IMPOSTERS");
-            h.innerHTML = "Plot twost , you all are IMPOSTERS !!!"
+            h.innerHTML = "Plot twist , you all are IMPOSTERS !!!"
             h.style = "color : purple;"
 
             
         }
-        else if(votecount == imposters){
+        else if(currentplot ==0){
+        if(votecount == imposters){
 
             h.innerHTML = "Crew wins !"
             h.style = "color : green;"
@@ -494,6 +496,10 @@ submit.addEventListener("click" , function(){
             h.style = "color : red;"
             
         }
+
+
+        }
+  
     }
     gameback.addEventListener("click" , function(){
                 h.style = "display : none;"
@@ -506,6 +512,9 @@ submit.addEventListener("click" , function(){
         time = 0;
         countt = 0;
         choosen = [];
+        currentplot = 0
+        votecount = 0
+        imps = []
     })
     let b = document.createElement("button")
     game.appendChild(b)
@@ -521,6 +530,9 @@ submit.addEventListener("click" , function(){
         time = 0;
         countt = 0;
         choosen = [];
+        currentplot = 0;
+        votecount = 0
+        imps = []
 
     })
 
