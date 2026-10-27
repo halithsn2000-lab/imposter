@@ -35,51 +35,96 @@ let foodtopic = ["pizza", "burger", "pasta", "sushi", "tacos", "sandwich", "sala
 let foodhints = ["Crust","Patty","Sauce","Wasabi","Salsa","Filling","Dressing","Syrup","Scoop","Cocoa"];
 let countriestopic = ["Algeria", "Japan", "Brazil", "Canada", "Egypt", "France", "Germany", "Italy", "Australia", "Spain"];
 let countrieshints = ["Sahara","Shinkansen","Carnival","Maple","Pharaoh","Baguette","Autobahn","Colosseum","Outback","Flamenco"];
+
 let randomtopic = [
+    // Sports
     "football", "basketball", "tennis", "volleyball", "swimming",
     "boxing", "cricket", "rugby", "cycling", "athletics",
-    "pizza", "burger", "pasta", "sushi", "tacos",
-    "sandwich", "salad", "pancakes", "ice cream", "chocolate",
-    "Algeria", "Japan", "Brazil", "Canada", "Egypt",
-    "France", "Germany", "Italy", "Australia", "Spain"
-];
-let randomhints = [
-    // Sports
-    "Offside",     // football
-    "Dunk",        // basketball
-    "Deuce",       // tennis
-    "Rotation",    // volleyball
-    "Laps",        // swimming
-    "Knockout",    // boxing
-    "Wicket",      // cricket
-    "Scrum",       // rugby
-    "Pedals",      // cycling
-    "Decathlon",   // athletics
 
     // Food
-    "Crust",       // pizza
-    "Patty",       // burger
-    "Sauce",       // pasta
-    "Wasabi",      // sushi
-    "Salsa",       // tacos
-    "Filling",     // sandwich
-    "Dressing",    // salad
-    "Syrup",       // pancakes
-    "Scoop",       // ice cream
-    "Cocoa",       // chocolate
+    "pizza", "burger", "pasta", "sushi", "tacos",
+    "sandwich", "salad", "pancakes", "ice cream", "chocolate",
 
     // Countries
-    "Sahara",      // Algeria
-    "Shinkansen",  // Japan
-    "Carnival",    // Brazil
-    "Maple",       // Canada
-    "Pharaoh",     // Egypt
-    "Baguette",    // France
-    "Autobahn",    // Germany
-    "Colosseum",   // Italy
-    "Outback",     // Australia
-    "Flamenco"     // Spain
+    "Algeria", "Japan", "Brazil", "Canada", "Egypt",
+    "France", "Germany", "Italy", "Australia", "Spain",
+
+    // Animals
+    "Lion", "Elephant", "Penguin", "Dolphin", "Eagle",
+    "Snake", "Giraffe", "Shark", "Kangaroo", "Owl",
+    "Turtle", "Monkey", "Cheetah", "Octopus", "Camel",
+
+    // Technology
+    "Computer", "Keyboard", "Mouse", "Smartphone", "Headphones",
+    "Camera", "Drone", "Robot", "Printer", "WiFi",
+    "Battery", "Microphone", "Projector", "Satellite", "VR headset",
+
+    // School
+    "Mathematics", "History", "Geography", "Chemistry", "Physics",
+    "Biology", "Pencil", "Backpack", "Exam", "Homework",
+    "Teacher", "Library", "Calculator", "Notebook", "Graduation",
+
+    // Video Games
+    "Minecraft", "Fortnite", "Roblox", "Among Us", "GTA",
+    "FIFA", "Mario", "Pokemon", "Tetris", "Pac-Man",
+    "Call of Duty", "Rocket League", "Clash Royale",
+    "Subway Surfers", "Terraria",
+
+    // Everyday Objects
+    "Mirror", "Umbrella", "Clock", "Scissors", "Pillow",
+    "Refrigerator", "Toothbrush", "Wallet", "Suitcase", "Candle",
+    "Key", "Elevator", "Flashlight", "Alarm clock", "Fan",
+
+    // Clothing
+    "Sneakers", "Hoodie", "Sunglasses", "Suit", "Jeans",
+    "Scarf", "Helmet", "Watch", "Ring", "Backpack",
+    "Sandals", "Tie", "Gloves", "Raincoat", "Crown"
 ];
+
+let randomhints = [
+    // Sports
+    "Offside", "Dunk", "Deuce", "Rotation", "Laps",
+    "Knockout", "Wicket", "Scrum", "Pedals", "Decathlon",
+
+    // Food
+    "Crust", "Patty", "Sauce", "Wasabi", "Salsa",
+    "Filling", "Dressing", "Syrup", "Scoop", "Cocoa",
+
+    // Countries
+    "Sahara", "Shinkansen", "Carnival", "Maple", "Pharaoh",
+    "Baguette", "Autobahn", "Colosseum", "Outback", "Flamenco",
+
+    // Animals
+    "King", "Memory", "Cold", "Intelligent", "Sky",
+    "Slither", "Tall", "Danger", "Jump", "Night",
+    "Shell", "Banana", "Speed", "Eight", "Desert",
+
+    // Technology
+    "Desktop", "Typing", "Click", "Pocket", "Music",
+    "Capture", "Flying", "Automatic", "Paper", "Wireless",
+    "Energy", "Voice", "Screen", "Orbit", "Immersion",
+
+    // School
+    "Numbers", "Past", "Maps", "Reactions", "Forces",
+    "Living", "Eraser", "Carry", "Stress", "Deadline",
+    "Explain", "Quiet", "Solve", "Pages", "Achievement",
+
+    // Video Games
+    "Blocks", "Battle", "Create", "Suspicion", "Crime",
+    "Football", "Plumber", "Capture", "Shapes", "Maze",
+    "Soldiers", "Cars", "Cards", "Chase", "Underground",
+
+    // Everyday Objects
+    "Reflection", "Rain", "Time", "Cut", "Sleep",
+    "Cold", "Morning", "Money", "Travel", "Flame",
+    "Lock", "Floors", "Darkness", "Wake up", "Breeze",
+
+    // Clothing
+    "Laces", "Comfort", "Shade", "Formal", "Denim",
+    "Neck", "Protection", "Wrist", "Finger", "Shoulders",
+    "Summer", "Knot", "Fingers", "Waterproof", "Royalty"
+];
+
 let animalstopic = [
     "Lion", "Elephant", "Penguin", "Dolphin", "Eagle",
     "Snake", "Giraffe", "Shark", "Kangaroo", "Owl",
