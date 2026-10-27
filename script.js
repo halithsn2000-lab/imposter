@@ -166,6 +166,7 @@ categories.forEach(function(category ,) {
 
 
 startbtn.addEventListener("click" , function () {
+    nextplayerbtn.textContent = "Next player"
      document.getElementById("voteoptions").style = "display: none;"
     document.getElementById("votetxt").style = "display : none;"
 
@@ -236,11 +237,12 @@ startbtn.addEventListener("click" , function () {
     }
      if(plottwist == 1){
 
-            if(Math.random()>0.85){
+            if(Math.random()>0.1){
                 currentplot = 1; console.log(currentplot);
                  for(let i = 0 ; i < numslist.length ; i++){
                     numslist[i] = "imposter";
                     console.log(numslist);
+
                     
                  }                
             }else{currentplot = 0 ;
@@ -270,6 +272,7 @@ startbtn.addEventListener("click" , function () {
 })
 
     view.addEventListener("click" , function(){
+        
         popup.style = "display : flex;"
         popuph1.textContent = numslist[count];
         console.log(popuph1);
@@ -277,10 +280,16 @@ startbtn.addEventListener("click" , function () {
         popupcontainer.style = "display : flex;"
         if (popup.querySelector("h1").textContent == "Imposter" && hints == 1){
             popup.querySelector("h3").textContent = currenthint;
-        }else{
+            
+        }
+        else{
             popup.querySelector("h3").textContent = "";
         }
-        
+        if(currentplot == 1 && hints == 1){
+            let i = Math.floor(Math.random() * randomhints.length)
+            currenthint = randomhints[i]
+            popup.querySelector("h3").textContent = currenthint;
+        }
 
     })
 
@@ -369,7 +378,7 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
         gameback.addEventListener("click" , function(){
 
 
-       
+        currentplot = 0;
         clearInterval(timeintroval)
         game.style = "display :none";
         parameters.style = "display : flex;"
@@ -382,7 +391,7 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
 
     backbtn.addEventListener("click" , function () {
 
-   
+   currentplot = 0;
     clearInterval(timeintroval)
     players = [];
     topicspage.style = "display : none;"
@@ -474,7 +483,7 @@ submit.addEventListener("click" , function(){
         
         }
         if(currentplot == 1 ){
-
+            
             console.log("Plot twost , you all are IMPOSTERS");
             h.innerHTML = "Plot twist , you all are IMPOSTERS !!!"
             h.style = "color : purple;"
@@ -502,6 +511,7 @@ submit.addEventListener("click" , function(){
   
     }
     gameback.addEventListener("click" , function(){
+        currentplot == 0;
                 h.style = "display : none;"
         b.style = "display : none;"
         game.style = "display :none";
@@ -520,6 +530,7 @@ submit.addEventListener("click" , function(){
     game.appendChild(b)
     b.innerHTML = "Play again"
     b.addEventListener("click" , function(){
+        currentplot = 0;
         h.style = "display : none;"
         b.style = "display : none;"
         game.style = "display :none";
