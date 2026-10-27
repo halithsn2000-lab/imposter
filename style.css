@@ -164,6 +164,7 @@ display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    gap: 010px;
 }
 .categories{
     height: 150px;
@@ -174,6 +175,7 @@ display: none;
     display: flex;
     justify-content: space-around;
     padding: 15px;
+    
 
     
 }
@@ -344,8 +346,7 @@ display: none;
 #game img{
     height: 45px;
     position: relative;
-    right: 45%;
-    bottom:15%;
+    bottom:150px;
 }
 #popupcontainer{
     display: none;
@@ -398,4 +399,13 @@ display: none;
 #voteoptions button{
     height: 50px;
     width: 200px;
+}
+#gamebackdiv{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    position: relative;
+    
 }

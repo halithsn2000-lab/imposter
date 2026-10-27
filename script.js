@@ -268,7 +268,7 @@ startbtn.addEventListener("click" , function () {
         console.log(popuph1);
         game.style="display :none;"
         popupcontainer.style = "display : flex;"
-        if (popup.querySelector("h1").textContent == "Imposter"){
+        if (popup.querySelector("h1").textContent == "Imposter" && hints == 1){
             popup.querySelector("h3").textContent = currenthint;
         }else{
             popup.querySelector("h3").textContent = "";
