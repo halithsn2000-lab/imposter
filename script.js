@@ -91,6 +91,11 @@ let time  = 0;
 let currenthint ; 
 let timeleft = 0;
 let timeintroval ;
+let votebtn = document.getElementById("votebtn")
+let voteplayer;
+let votetxt = document.getElementById("votetxt")
+
+
 
 addplayerbtn.addEventListener("click" , function(){
 
@@ -156,6 +161,9 @@ categories.forEach(function(category ,) {
 
 
 startbtn.addEventListener("click" , function () {
+     document.getElementById("voteoptions").style = "display: none;"
+    document.getElementById("votetxt").style = "display : none;"
+
     time = Number(impnum2.textContent)
     console.log(time);
     
@@ -351,7 +359,11 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
         
 
 
-            gameback.addEventListener("click" , function(){
+        gameback.addEventListener("click" , function(){
+
+
+       
+
         clearInterval(timeintroval)
         game.style = "display :none";
         parameters.style = "display : flex;"
@@ -363,6 +375,8 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
 
 
     backbtn.addEventListener("click" , function () {
+
+   
     clearInterval(timeintroval)
     players = [];
     topicspage.style = "display : none;"
@@ -370,7 +384,9 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
     inputshtml.style = "display : flex;"
     bottomnav.style  = "display : flex;"
     landingpage.style = "display : flex;"
-
+ document.querySelectorAll("#game .voteplayers").forEach(function(element){
+        element.style = "display : none;"
+    })
     categories.forEach(function(allcat){
         allcat.classList.remove("selected")
     })
@@ -385,9 +401,32 @@ document.querySelectorAll(".parametersdiv2 button").forEach(function (btn) {
     
 });
 backbtn2.addEventListener("click" , function(){
+    
     clearInterval(timeintroval)
     parameters.style = "display : none;"
      topicspage.style = "display : flex;"
     console.log("asdasd");
-    
+    document.querySelectorAll("#game .voteplayers").forEach(function(element){
+        element.style = "display : none;"
+    })
 })
+votebtn.addEventListener("click" ,function(){
+    votetxt.style = "display : flex;"
+    document.getElementById("voteoptions").style= "display : flex"
+    htmltimer.style = "display : none;";
+    document.getElementById("voteoptions").querySelectorAll(".voteplayers").forEach(function(element){
+        element.remove()
+    })
+    players.forEach(function(player){
+
+        votepalyer = document.createElement("button")
+        votepalyer.innerHTML = player;
+        votepalyer.classList.add("voteplayers")
+        document.getElementById("voteoptions").appendChild(votepalyer);
+    })
+})
+ document.querySelectorAll("#game .voteplayers").forEach(function(element){
+        element.addEventListener("click" , function(){
+
+        })
+    })
