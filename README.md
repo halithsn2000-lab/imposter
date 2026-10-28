@@ -15,6 +15,7 @@
 - 2 no ads
 - 3 10 fun categories to choose from
 - 4 no download requried
+- 5 you can use it in most languages (using the built in browser translation) because it is web based
 
   ## Why i built this:
     when i meet up with family we usually play imposter but the available games where either full of ads or paid so i took matters into my own hand
